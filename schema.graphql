@@ -1,0 +1,6 @@
+type Blacklist @entity {
+  id: ID!
+  usdc: Boolean!
+  usdt: Boolean!
+  busd: Boolean!
+}

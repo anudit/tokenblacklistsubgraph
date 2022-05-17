@@ -1,0 +1,74 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: TetherToken
+    network: mainnet
+    source:
+      address: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+      abi: TetherToken
+      startBlock: 4634748
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - AddedBlackList
+        - RemovedBlackList
+      abis:
+        - name: TetherToken
+          file: ./abis/TetherToken.json
+      eventHandlers:
+        - event: AddedBlackList(address)
+          handler: handleAddedBlackList
+        - event: RemovedBlackList(address)
+          handler: handleRemovedBlackList
+      file: ./src/usdt.ts
+  - kind: ethereum
+    name: UsdcToken
+    network: mainnet
+    source:
+      address: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+      abi: UsdcToken
+      startBlock: 6082465
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Blacklisted
+        - UnBlacklisted
+      abis:
+        - name: UsdcToken
+          file: ./abis/UsdcToken.json
+      eventHandlers:
+        - event: Blacklisted(indexed address)
+          handler: handleBlacklisted
+        - event: UnBlacklisted(indexed address)
+          handler: handleUnBlacklisted
+      file: ./src/usdc.ts
+  - kind: ethereum
+    name: BusdToken
+    network: mainnet
+    source:
+      address: "0x4fabb145d64652a948d72533023f6e7a623c7c53"
+      abi: BusdToken
+      startBlock: 8493105
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - AddressFrozen
+        - AddressUnfrozen
+      abis:
+        - name: BusdToken
+          file: ./abis/BusdToken.json
+      eventHandlers:
+        - event: AddressFrozen(indexed address)
+          handler: handleAddressFrozen
+        - event: AddressUnfrozen(indexed address)
+          handler: handleAddressUnfrozen
+      file: ./src/busd.ts
+
