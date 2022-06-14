@@ -1,9 +1,8 @@
-# tokenholderssubgraph
+# Token Blacklist Subgraph
 
-Build completed: QmeEaQop6jbffEMuF4ExXZFFK78BYbHkTPKWXTRhrYa2Dp
+Build completed: QmVxYdt2r17L8HWrRKvRCHeGy8okcpgyMHXnHiJSsTGJhX
 
-Deployed to https://thegraph.com/explorer/subgraph/anudit/tokenblacklists
+Deployed to https://thegraph.com/studio/subgraph/token-blacklists
 
 Subgraph endpoints:
-Queries (HTTP):     https://api.thegraph.com/subgraphs/name/anudit/tokenblacklists
-Subscriptions (WS): wss://api.thegraph.com/subgraphs/name/anudit/tokenblacklistss
+Queries (HTTP):     https://api.studio.thegraph.com/query/1649/token-blacklists/v1
