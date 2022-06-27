@@ -3,4 +3,5 @@ type Blacklist @entity {
   usdc: Boolean!
   usdt: Boolean!
   busd: Boolean!
+  tusd: Boolean!
 }

@@ -14,8 +14,7 @@ dataSources:
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - AddedBlackList
-        - RemovedBlackList
+        - Blacklist
       abis:
         - name: TetherToken
           file: ./abis/TetherToken.json
@@ -37,8 +36,7 @@ dataSources:
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - Blacklisted
-        - UnBlacklisted
+        - Blacklist
       abis:
         - name: UsdcToken
           file: ./abis/UsdcToken.json
@@ -60,8 +58,7 @@ dataSources:
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - AddressFrozen
-        - AddressUnfrozen
+        - Blacklist
       abis:
         - name: BusdToken
           file: ./abis/BusdToken.json
@@ -71,4 +68,24 @@ dataSources:
         - event: AddressUnfrozen(indexed address)
           handler: handleAddressUnfrozen
       file: ./src/busd.ts
+  - kind: ethereum
+    name: TusdToken
+    network: mainnet
+    source:
+      address: "0x0000000000085d4780B73119b644AE5ecd22b376"
+      abi: TusdToken
+      startBlock: 6988184
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Blacklist
+      abis:
+        - name: TusdToken
+          file: ./abis/TusdToken.json
+      eventHandlers:
+        - event: Blacklisted(indexed address,bool)
+          handler: handleAddressBlacklisted
+      file: ./src/tusd.ts
 
