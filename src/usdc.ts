@@ -12,6 +12,8 @@ export function handleBlacklisted(event: Blacklisted): void {
     entity.usdc = false;
     entity.busd = false;
     entity.tusd = false;
+    entity.euroc = false;
+    entity.eurt = false;
   }
 
   entity.usdc = true;

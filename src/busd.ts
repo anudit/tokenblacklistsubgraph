@@ -12,6 +12,8 @@ import {
       entity.usdc = false;
       entity.busd = false;
       entity.tusd = false;
+      entity.euroc = false;
+      entity.eurt = false;
     }
 
     entity.busd = true;
