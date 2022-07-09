@@ -132,4 +132,26 @@ dataSources:
         - event: RemovedBlackList(address)
           handler: handleRemovedBlackList
       file: ./src/eurt.ts
+  - kind: ethereum
+    name: UsdpToken
+    network: mainnet
+    source:
+      address: "0x8e870d67f660d95d5be530380d0ec0bd388289e1"
+      abi: UsdpToken
+      startBlock: 6294931
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Blacklist
+      abis:
+        - name: UsdpToken
+          file: ./abis/UsdpToken.json
+      eventHandlers:
+        - event: AddressFrozen(indexed address)
+          handler: handleAddressFrozen
+        - event: AddressUnfrozen(indexed address)
+          handler: handleAddressUnfrozen
+      file: ./src/usdp.ts
 

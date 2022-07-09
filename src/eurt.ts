@@ -1,30 +1,19 @@
 import {
     AddedBlackList,
     RemovedBlackList,
-} from "../generated/TetherToken/TetherToken"
-import { Blacklist } from "../generated/schema"
+} from "../generated/TetherToken/TetherToken";
+import { initializeBlacklist } from "./utils";
 
 export function handleAddedBlackList(event: AddedBlackList): void {
-    let entity = Blacklist.load(event.params._user.toHexString());
-    if (!entity) {
-        entity = new Blacklist(event.params._user.toHexString());
-        entity.usdt = false;
-        entity.usdc = false;
-        entity.busd = false;
-        entity.tusd = false;
-        entity.euroc = false;
-        entity.eurt = false;
-    }
-
+    let entity = initializeBlacklist(event.params._user, event.block.timestamp);
     entity.eurt = true;
-
+    entity.lastUpdated = event.block.timestamp;
     entity.save();
 }
 
 export function handleRemovedBlackList(event: RemovedBlackList): void {
-    let entity = Blacklist.load(event.params._user.toHexString());
-    if (entity) {
-        entity.eurt = false;
-        entity.save();
-    }
+    let entity = initializeBlacklist(event.params._user, event.block.timestamp);
+    entity.eurt = false;
+    entity.lastUpdated = event.block.timestamp;
+    entity.save();
 }

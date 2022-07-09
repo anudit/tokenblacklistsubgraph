@@ -1,19 +1,19 @@
 import {
     AddressFrozen,
     AddressUnfrozen,
-  } from "../generated/BusdToken/BusdToken";
+} from "../generated/UsdpToken/UsdpToken"
 import { initializeBlacklist } from "./utils";
 
-  export function handleAddressFrozen(event: AddressFrozen): void {
+export function handleAddressFrozen(event: AddressFrozen): void {
     let entity = initializeBlacklist(event.params.addr, event.block.timestamp);
-    entity.busd = true;
+    entity.usdp = true;
     entity.lastUpdated = event.block.timestamp;
     entity.save();
-  }
+}
 
-  export function handleAddressUnfrozen(event: AddressUnfrozen): void {
+export function handleAddressUnfrozen(event: AddressUnfrozen): void {
     let entity = initializeBlacklist(event.params.addr, event.block.timestamp);
-    entity.busd = false;
+    entity.usdp = false;
     entity.lastUpdated = event.block.timestamp;
     entity.save();
-  }
+}
