@@ -1,6 +1,6 @@
 # Token Blacklist Subgraph
 
-Build completed: QmRx61FWd6i1H8292QJJPZbszSwFyhtCVrxrW2waDEDrTB
+Build completed: Qmdm96s7PEDemzKHpnynEJ5xDEmDwSGjGXr8CVSx5VDJHx
 
 Deployed to https://thegraph.com/studio/subgraph/token-blacklists
 
