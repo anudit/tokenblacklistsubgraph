@@ -1,24 +1,26 @@
 # Token Blacklist Subgraph
 
-Build completed: Qmdm96s7PEDemzKHpnynEJ5xDEmDwSGjGXr8CVSx5VDJHx
+Build completed: QmfBi2Ej8SqUj52da39g3rAghgoSTeGRQm1MRm4bbDNLg2
 
 Deployed to https://thegraph.com/studio/subgraph/token-blacklists
 
 Subgraph endpoints:
-Queries (HTTP):     https://api.studio.thegraph.com/query/1649/token-blacklists/v1.5
+Queries (HTTP):     https://api.studio.thegraph.com/query/1649/token-blacklists/v1.6
 
 Example Query,
 ```
 {
   blacklists(where: {usdt: true}) {
     id
-    usdc
-    usdt
+    alusd
     busd
-    tusd
     euroc
     eurt
+    husd
+    tusd
+    usdc
     usdp
+    usdt
     lastUpdated
   }
 }

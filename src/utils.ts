@@ -12,6 +12,8 @@ export function initializeBlacklist(address: Address, now: BigInt): Blacklist {
       entity.euroc = false;
       entity.eurt = false;
       entity.usdp = false;
+      entity.husd = false;
+      entity.alusd = false;
       entity.lastUpdated = now;
     }
     entity.save();

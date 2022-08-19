@@ -7,5 +7,7 @@ type Blacklist @entity {
   euroc: Boolean!
   eurt: Boolean!
   usdp: Boolean!
+  husd: Boolean!
+  alusd: Boolean!
   lastUpdated: BigInt!
 }
